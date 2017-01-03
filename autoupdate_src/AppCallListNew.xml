@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="shift_jis"?>
+<root>
+  <item>
+    <title>Evernoteへノートを追加 (&amp;E)</title>
+    <!-- descriptionノードは、初回実行時の説明文として表示する。 -->
+    <description>◆Evernoteへノートを追加\r\n追加後はEvernoteが表示されます。\r\n本機能の利用には、Windows版Evernoteクライアントの\r\nインストールが必要です。本メニューが「無効」状態の場合、\r\nEvernoteクライアントがインストールされていません。</description>
+    <subject>
+      <save_section>addevernote</save_section>
+      <argv>
+        <name>タイトル</name>
+        <value>$AUTO_TITLE$</value>
+        <save_key>title</save_key>
+      </argv>
+      <argv>
+        <name>ノートブック</name>
+        <save_key>notebook</save_key>
+      </argv>
+      <argv>
+        <name>タグ</name>
+        <!--※ここは保存しない設定にする。-->
+      </argv>
+    </subject>
+    <exec>
+      <targetfile>C:\Program Files\Evernote\Evernote\ENScript.exe</targetfile>
+      <targetfile>C:\Program Files (x86)\Evernote\Evernote\ENScript.exe</targetfile>
+      <!-- ShellExecute() の nShowCmd 引数に準ず。現状、SW_HIDEとSW_SHOWNAのみサポート。省略時はSW_SHOWNA扱い。 -->
+      <shellexecute_showcmd>SW_HIDE</shellexecute_showcmd>
+      <!-- 引数での置き換えは「1番目」が「％～１」で対応する。置き換え不要は一番最後のノードに -->
+      <argvstr>createNote /i "%~1"</argvstr>
+      <argvstr> /n "%~2"</argvstr>
+      <argvstr> /t "%~3"</argvstr>
+      <argvstr> /s "$CONTENS_FILE_NAME$"</argvstr>
+    </exec>
+    <exec>
+      <!-- Evernote側の完了のために2秒待つ。ENScript.exe側の終了、【ではない】。 -->
+      <targetfile>C:\Windows\System32\timeout.exe</targetfile>
+      <shellexecute_showcmd>SW_HIDE</shellexecute_showcmd>
+      <argvstr>/t 2</argvstr>
+    </exec>
+    <exec>
+      <targetfile>C:\Program Files\Evernote\Evernote\ENScript.exe</targetfile>
+      <targetfile>C:\Program Files (x86)\Evernote\Evernote\ENScript.exe</targetfile>
+      <!-- ShellExecute() の nShowCmd 引数に準ず。現状、SW_HIDEとSW_SHOWNAのみサポート。省略時はSW_SHOWNA扱い。 -->
+      <shellexecute_showcmd>SW_HIDE</shellexecute_showcmd>
+      <!-- 引数での置き換えは「1番目」が「％～１」で対応する。置き換え不要は一番最後のノードに -->
+      <argvstr>showNotes /q "%~1"</argvstr>
+      <!--subjectノードでの定義に従い、「％１」はタイトル-->
+    </exec>
+  </item>
+  <item>
+    <title>Evernoteへノートを追加 -非同期版- (&amp;A)</title>
+    <description>◆Evernoteへノートを追加 -非同期版- \r\n上記「Evernoteへノートを追加」の非同期版です。\r\n追加はバックグラウンドで行われます。</description>
+    <subject>
+      <save_section>addevernote</save_section>
+      <argv>
+        <name>タイトル</name>
+        <value>$AUTO_TITLE$</value>
+        <save_key>title</save_key>
+      </argv>
+      <argv>
+        <name>ノートブック</name>
+        <save_key>notebook</save_key>
+      </argv>
+      <argv>
+        <name>タグ</name>
+        <!--※ここは保存しない設定にする。-->
+      </argv>
+    </subject>
+    <exec>
+      <targetfile>C:\Program Files\Evernote\Evernote\ENScript.exe</targetfile>
+      <targetfile>C:\Program Files (x86)\Evernote\Evernote\ENScript.exe</targetfile>
+      <!-- ShellExecute() の nShowCmd 引数に準ず。現状、SW_HIDEとSW_SHOWNAのみサポート。省略時はSW_SHOWNA扱い。 -->
+      <shellexecute_showcmd>SW_HIDE</shellexecute_showcmd>
+      <!-- 引数での置き換えは「1番目」が「％～１」で対応する。置き換え不要は一番最後のノードに -->
+      <argvstr>createNote /i "%~1"</argvstr>
+      <argvstr> /n "%~2"</argvstr>
+      <argvstr> /t "%~3"</argvstr>
+      <argvstr> /s "$CONTENS_FILE_NAME$"</argvstr>
+    </exec>
+  </item>
+  <item>
+    <title>Internet Explorerでこのファイルを開く</title>
+    <!-- descriptionノードは省略可能 -->
+    <!-- subjectノードも省略可能。
+         ⇒確認＆編集ダイアログを表示せずに「元ファイルのパス」が $CONTENS_FILE_NAME$ に渡される。
+           ダイアログ表示時とは異なり、選択キャレット or 編集後のテキストを出力したファイルパスへの置き換え、
+           は為されないので注意。
+    -->
+    <exec>
+      <targetfile>C:\Program Files\Internet Explorer\iexplore.exe</targetfile>
+      <!-- 引数での置き換えは「1番目」が「％～１」で対応する。置き換え不要は一番最後のノードに -->
+      <argvstr>"$CONTENS_FILE_NAME$"</argvstr>
+    </exec>
+  </item>
+</root>

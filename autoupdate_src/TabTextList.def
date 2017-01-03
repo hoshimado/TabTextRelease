@@ -1,0 +1,18 @@
+[TabNote]
+TextFile1=InstructionManual\Read me.txt
+TextFile2=InstructionManual\PlugInSpecification.txt
+TextFile3=AboutNkf32.txt
+TextFile4=InstructionManual\SampleItemList.txt
+EditHScroll1=1
+EditHScroll2=1
+EditHScroll3=1
+EditHScroll4=1
+FocusPage=0
+CaretPos=0
+ItemListStr=Åü
+[TabTextList-WH-Size]
+Width=640
+Height=480
+[TextContextMenu]
+KeyList=UOTEEJSTUODLESRUDNSHCP
+PlugInShortCut=80

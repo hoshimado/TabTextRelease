@@ -1,0 +1,382 @@
+setting.\EscSequ@\n#.ListMarkup=true
+_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+
+  両手たぶメモ  テキスト処理プラグイン　仕様書  Ver1.32
+
+                                      2017.01.03
+_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+
+
+# ■プラグインとして認識されるファイル名
+システムモジュール（TabTextList.exe）のあるフォルダ直下の
+"Plugins"フォルダに置かれた拡張子[.tpi]のDLLを、プラグインとして認識します。
+
+"Plugins\*.tpi"
+
+
+
+
+# ■プラグインが提供できる機能
+○テキスト全体、もしくは選択されたテキスト(反転部分)に対して、
+　何らかのテキスト処理を行うことが出来ます。
+○下記の呼び出しタイミングにマッチする限り、テキスト処理に限らず
+　フォント設定やファイルパスの取得など自由に設定することができます。
+○取得したテキスト等の情報を元にHTMLソースへ加工し、
+　それをサブノート・ペインに表示させることが出来ます。
+
+
+
+
+# ■プラグインが呼び出されるタイミング
+「テキスト・サイド・メニュー」が選択されたとき。
+
+
+
+# ■プラグインの実装
+プラグインDLLは、以下の４つの関数をエクスポートする必要があります。
+※以下において、「テキスト処理」とは「テキスト・サイド・メニュー」
+　によって選択されたプラグインのテキスト処理の実行を意味します。
+--------------------------------------------------------------------------------+
+【関数名】			|【機能】					|
+--------------------------------+-----------------------------------------------+
+TtlPlgIn_GetTMenuTitle		| システムモジュールが、プラグインで実装された	|
+				| メニュー名を取得するために利用します。	|
+--------------------------------+-----------------------------------------------+
+TtlPlgIn_HandleOpen		| テキスト処理の開始時に呼び出されます。	|
+--------------------------------+-----------------------------------------------+
+TtlPlgIn_Work			| テキスト処理を実行するために呼び出されます。	|
+--------------------------------------------------------------------------------+
+TtlPlgIn_HandleClose		| テキスト処理の終了時に呼び出されます。	|
+--------------------------------+-----------------------------------------------+
+
+プラグインDLLは、以下の１つの関数を任意でエクスポートしてもよいです。
+※無くても構いません。
+--------------------------------------------------------------------------------+
+【関数名】			| 【機能】					|
+--------------------------------+-----------------------------------------------+
+TtlPlgIn_GetActFlags		| システムモジュールが、プラグインで実装された	|
+				| 動作タイプを取得するために利用します。	|
+--------------------------------+-----------------------------------------------+
+
+
+以上の４つの関数は以下の流れで呼び出されます。
+	TtlPlgIn_GetTMenuTitle
+		↓
+	TtlPlgIn_GetActFlags
+	  ※本体バージョン2.12以降のみ。
+	    (存在しない場合は次へ進む。)
+		↓
+	TtlPlgIn_HandleOpen
+		↓
+	TtlPlgIn_Work
+		↓
+	TtlPlgIn_HandleClose
+
+
+
+# ■エクスポート関数の仕様
+呼び出し規約は "__stdcall" でなければなりません。
+
+以下では
+「Long型（long型）＝符号付き32ビット整数型」、
+「DWord型 ＝符号無し32ビット整数型」、
+として扱います。
+
+## ○Function Export TtlPlgIn_GetTMenuTitle( nIndex As Long, pszMenu As BytePtr ) As Long
+	【引数】
+	nIndex As Long
+	プラグインが持つ、テキスト処理メニューの項目番号（0,1,2,,,）がLong型で
+	指定されます。
+	もしくは、テキスト処理メニューの個数取得のフラグとして[-1]が指定されます。
+	
+	pszMenu As BytePtr
+	指定されたテキスト処理メニューのタイトルを格納すべきバッファのポインタが
+	BytePtr（*char）型で指定されます。
+	もしくは、タイトル格納に要するバッファサイズ取得のフラグとして[NULL]が
+	指定されます。
+	
+	【返り値】
+	Long型を返します。
+	nIndex=-1 のときは、プラグインが保有するテキスト処理メニューの個数を返します。
+	nIndex=0,1,2,,, のときは、
+		pszMenu がNULLでないときは、格納したタイトルの長さを返します。
+		pszMenu がNULLのときは、タイトルを格納するのに必要なバッファサイズ
+		（タイトル長＋1Byte）を返します。
+
+
+## ○Function Export TtlPlgIn_GetActFlags( nIndex As Long ) As DWord
+	※本関数は本体バージョン2.12以降でのみ有効となります。
+	※本関数の実装は任意です。無くても構いません。
+
+	【引数】
+	nIndex As Long
+	プラグインが持つ、テキスト処理メニューの項目番号（0,1,2,,,）がLong型で
+	指定されます。
+	
+	【返り値】
+	引数 nIndex で指定されたテキスト処理の動作タイプを返します。
+	テキスト処理が正常処理した場合に、構造体TtlExpand のfFlags メンバに
+	設定される定数と同じものを、「動作タイプ」として返さなければいけません。
+
+
+## ○Function Export TtlPlgIn_HandleOpen( nIndex As Long ) As DWord
+	【引数】
+	nIndex As Long
+	システムモジュールによって選択された（「テキスト・サイド・メニュー」で
+	選択された）、テキスト処理メニューの項目番号がLong型で格納されます。
+	
+	【返り値】
+	DWord（unsigned long）型です。
+	テキスト処理メニューを識別するハンドルを返します。
+	ここで返したハンドルが TtlPlgIn_Work() と TtlPlgIn_HandleClose() に
+	与えれます。
+
+
+## ○Function Export TtlPlgIn_Work( dwHandle As DWord, hWnd As HWND , pszFile As BytePtr, pszText As BytePtr, pszSel As BytePtr, ByRef pzNText As BytePtr, ByRef pzNSel As BytePtr, dwReserved As DWord ) As DWord
+	【引数】
+	dwHandle As DWord
+	テキスト処理メニューを識別するハンドルがDWord（unsigned long）型で
+	指定されます。
+	
+	hWnd As HWND
+	システムモジュールの窓ハンドルが指定されます。
+	
+	pszFile As BytePtr
+	編集中のテキストが保存されているファイルパスが格納されたバッファのポインタが
+	BytePtr（*char）型で指定されます。
+	格納内容を編集は禁止です（コピーのみ可）。
+	
+	pszText As BytePtr
+	編集中のテキスト全体が格納されたバッファのポインタがBytePtr（*char）型で指定されます。
+	格納内容を編集は禁止です（コピーのみ可）。
+	
+	pszSel As BytePtr
+	被選択テキスト（反転部）が格納されたバッファのポインタがBytePtr（*char）型で
+	指定されます。
+	格納内容を編集は禁止です（コピーのみ可）。
+	
+	ByRef pzNText As BytePtr
+	テキスト処理を実行後の、テキスト全体を格納したバッファへのポインタを
+	BytePtr（*char）型で指定します。
+	このパラメータに指定したバッファは、TtlPlgIn_HandleClose() が呼ばれるまで
+	有効でなければいけません。
+	不要であればNULLを指定できますが、その際は dwReserved に TTL_PLUGIN_ALLTEXT 以外を
+	指定しなければなりません。
+	
+	ByRef pzNSel As BytePtr
+	テキスト処理を実行後の、被選択テキストを格納したバッファへのポインタを
+	BytePtr（*char）型で指定します。
+	このパラメータに指定したバッファは、TtlPlgIn_HandleClose() が呼ばれるまで
+	有効でなければいけません。
+	不要であればNULLを指定できますが、その際は dwReserved に TTL_PLUGIN_SELECTED 以外を
+	指定しなければなりません。
+	
+	dwReserved As DWord
+	将来のために予約されていました。
+	Version 1.70 以降の本体においては、プラグイン拡張構造体 TtlExpand が格納されます。
+	構造体 TtlExpand の仕様は別途項を参照ください。
+	それ以前の本体においては、NULLが格納されます。
+	
+	【返り値】
+	テキスト処理の種類を指定します。
+		テキスト全体を処理した場合は、TTL_PLUGIN_ALLTEXT(=1)
+			※テキスト全体が、pzNText に指定された内容で置き換えられます。
+	
+		被選択テキストのみが処理された場合は、TTL_PLUGIN_SELECTED(=2)
+			※被選択テキストのみが、pzNSel に指定された内容で置き換えられます。
+	
+		テキスト処理を伴わない、もしくは処理に失敗した場合は、TTL_PLUGIN_FALSE(=0)
+			※テキストの置き換えは行いません。
+
+
+## ○Function Export TtlPlgIn_HandleClose( dwHandle As DWord ) As Char
+	【引数】
+	dwHandle As DWord
+	テキスト処理メニューを識別するハンドルがDWord（unsigned long）型で指定されます。
+	
+	【返り値】
+	処理の結果をTRUE(=1) or FALSE(=0) で返します。
+
+
+
+
+
+# ■拡張構造体 TtlExpand の仕様
+次の順に、以下のメンバを持つ必要があります。
+特に、wVersion メンバは必須です。
+
+## ◇AB4 での定義
+	Type TtlExpand
+		wVersion As Word
+		dwSelIni As DWord
+		dwSelFin As DWord
+		fFlags As DWord
+		hFont As HFONT
+		pszGadgetPath As BytePtr
+		pstItemListInfo As *ITEM_LIST_INFO
+		pszGadgetCurrentInitialPath As BytePtr
+	End Type
+	Type ITEM_LIST_INFO
+		wReserve As Word
+		pdwItemListPos As *DWord
+		nCountOfList As Long
+	End Type
+
+
+## ◇C/C++での定義 (※なお、これ以後はAB4 での記法で記述しています。)
+	typedef struct _tag_TtlExpand {
+		unsigned short int	wVersion;
+		unsigned int 		dwSelIni;
+		unsigned int		dwSelFin;
+		unsigned int		fFlags;
+		HFONT 			hFont;
+		char* 			pszGadgetPath;
+		ITEM_LIST_INFO*		pstItemListInfo;
+		char*  			pszGadgetCurrentInitialPath;
+	} TtlExpand;
+	typedef struct _tag_ITEM_LIST_INFO {
+		unsigned short int 	wReserve;
+		unsigned int*		pdwItemListPos;
+		int			nCountOfList;
+	} ITEM_LIST_INFO;
+
+
+## それぞれのメンバの仕様は以下です。
+### ○wVersion As Word
+	本体側のバージョン情報が格納されます。
+	[Mxx]=Mメジャー,xxマイナー。
+
+### ○dwSelIni As DWord
+	wVersion = 170 以降で対応。
+	キャレット開始位置が格納されます。
+	フラグfFlagsに TTL_PGF_CARET を指定したときは、
+	本体側のキャレット開始位置が指定された値に移動されます。
+
+### ○dwSelFin As DWord
+	wVersion = 170 以降で対応。
+	キャレット終了位置が格納されます。
+	フラグfFlagsに TTL_PGF_CARET を指定したときは、
+	本体側のキャレット終了位置が指定された値に移動されます。
+
+### ○fFlags As DWord
+	本体側に反映すべき（有効になる）パラメータのフラグです。
+	以下の定数を格納します。
+		TTL_PGF_NOCHAGE	= 0x00	拡張構造体の返り値は考慮しない
+					デフォルト。
+		TTL_PGF_CARET	= 0x01	キャレット位置を反映する（表示する）
+					dwSelIni,dwSelFinメンバが有効になる。
+		TTL_PGF_FONT	= 0x02	フォントを反映する。
+					hFontメンバが有効になる。
+		TTL_PGF_GADGET	= 0x04	サブノートを表示する。
+
+		TTL_PGF_INPUTCD = 0x20	「URLを処理」配下にもメニューを表示する。
+		TTL_PGF_INPUTCD = 0x40	[Ctrl + SPACE]による呼び出し
+					(入力候補メニューを表示)に対応。
+
+### ○hFont As HFONT
+	wVersion = 170 以降で対応。
+	編集中のテキストに用いられているフォントが格納されます。
+	※呼び出し条件においてフォントが無効である場合があります。
+	　プラグインは、本メンバの値を利用前にNULLでないことを
+	　確認すること推奨します。
+
+	フラグfFlagsに TTL_PGF_FONT を指定したときは、
+	ここに格納したフォントが編集中のテキストに設定されます。
+	※フォントは、本体側で自動開放されます。
+
+### ○pszGadgetPath As BytePtr
+	wVersion = 200 以降で対応。
+	サブノート・ペインに表示するHTMLソースの、出力先ファイルパスが
+	格納されます。
+	フラグfFlagsに TTL_PGF_GADGET を指定したときは、出力先ファイル
+	の内容が、本体側のサブノート・ペインにHTMLベースで表示されます。
+
+### ○pstItemListInfo As *ITEM_LIST_INFO
+	wVersion = 220 以降で対応。
+	項目リストに関する情報が格納された構造体ITEM_LIST_INFOへの
+	ポインタが格納されます。
+
+	○ITEM_LIST_INFO::wReserve As Word
+		将来のために予約されています。
+
+	○ITEM_LIST_INFO::pdwItemListPos As *DWord
+		項目リストの、各アイテムに対応する
+		「編集中のテキストにおける先頭からのByte数」
+		が格納されたDWord型の配列です。
+
+	○ITEM_LIST_INFO::nCountOfList As Long
+		上記のpdwItemListPos配列の要素数が格納されます。
+
+	※「割り込みパネル」からの呼び出し時は、割り込みパネル側の
+　　　　　項目リストが格納される仕様なので注意。
+
+### ○pszGadgetCurrentInitialPath As BytePtr
+	wVersion = 237 以降で対応。
+	現在表示中のサブノート・ペインの、初期HTMLソースへのファイルパスが
+	格納されます。
+	表示中のサブノート・ペインが無い場合は、NULLが格納されます。
+
+	※メンバ自体は231以降で対応済み。
+	　ただし、231～236では、「履歴モード」以外では呼び出し時点で
+	　ファイルが削除（古いのが保持されない）される仕様。
+	　237以降は保持されるように仕様変更済み。
+
+
+
+# ■備考
+プラグインDLL内部にて、動的メモリ（ヒープ領域）確保が必要な場合には、
+ TtlPlgIn_HandleOpen() もしくは、TtlPlgIn_Work() にて確保を行い、
+ TtlPlgIn_HandleClose() にて開放することを推奨します。
+
+
+
+
+
+# ■更新履歴
+Version 1.32
+	本仕様書の表記(マークアップ）を少し変更。
+	「■ → # ■」へ。
+
+Version 1.31
+	本体バージョン 2.37 のプラグイン拡張仕様について、追記。
+	（TtlExpand::pszGadgetCurrentInitialPath As BytePtr メンバの
+	　動作周りの改善を反映。また、pstItemListInfo に関する
+	　「割り込みパネル」経由時の動作について明記）
+
+Version 1.30
+	本体バージョン 2.31 のプラグイン拡張仕様について、追記。
+	(TtlExpand::pszGadgetCurrentInitialPath As BytePtr メンバを追加)
+
+Version 1.21
+	本体バージョン 2.26 のプラグイン拡張仕様について、追記。
+	(TtlExpand::fFlags As DWord の定義値にTTL_PGF_INPUTCDを追加)
+
+Version 1.20
+	本体バージョン 2.20 のプラグイン拡張仕様について、追記。
+	(TtlExpand::pstItemListInfo As *ITEM_LIST_INFO メンバを追加)
+
+Version 1.13
+	動作モードを取得する関数 TtlPlgIn_GetActFlags の仕様を追記。
+	※実装は任意。
+	　本関数は、本体バージョン 2.12 以降でのみ有効。
+
+Version 1.12
+	誤字修正（dwSelFin As DWord の説明文中）。
+	追記（hFont As HFONT のフォントは、不要時に
+	　　　本体側で自動開放される旨）。
+
+Version 1.11
+	誤字修正（エキスポート　→　エクスポート）。
+
+Version 1.10
+	本体バージョン 2.00 のプラグイン拡張仕様について、追記。
+	(TtlExpand::pszGadgetPath As BytePtr メンバを追加)
+
+Version 1.01
+	本体バージョン 1.70 のプラグイン拡張仕様について、追記。
+	(拡張構造体 TtlExpand を追加)
+
+Version 1.00
+	初版完成
+
+
