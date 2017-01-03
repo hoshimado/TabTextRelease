@@ -1,0 +1,651 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="./dl_menu_idx_def.xsl" type="text/xsl"?>
+<download>
+  <new_mark_date>2016.07.01</new_mark_date>
+  <soft_type page="./mobile_app/index.html">
+    <soft>
+      <anchor>?id=editspeech</anchor>
+      <name>音声入力メモ帳</name>
+      <explanation>音声入力ベースで、テキストを編集するメモ帳（Webブラウザ版）。</explanation>
+      <page>./mobile_app/index.html</page>
+      <last_date>2016.06.04</last_date>
+    </soft>
+    <soft>
+      <anchor>?id=searchportal</anchor>
+      <name>ショートカット検索ポータル</name>
+      <explanation>Twitterと英単語（in Weblio）への検索ショートカット提供（Webブラウザ版）。</explanation>
+      <page>./mobile_app/index.html</page>
+      <last_date>2016.06.04</last_date>
+    </soft>
+    <soft>
+      <anchor>?id=marksheet</anchor>
+      <name>汎用マークシート解答Webアプリ</name>
+      <explanation>紙ノートに回答を書く代わりに、スマートフォン上でマークシート回答アプリ（Webブラウザ版）。</explanation>
+      <page>./mobile_app/index.html</page>
+      <last_date>2016.06.04</last_date>
+    </soft>
+  </soft_type>
+  <soft_type page="dl_menu.html">
+    <!-- 標準でのノード順で並べています。 -->
+    <soft>
+      <anchor>#SlideMax</anchor>
+      <name>SlideMax</name>
+      <explanation>縦長は並べて、横長は1枚で、と大きさやアスペクト比の異なる画像群に最適なスライドショー ソフト。</explanation>
+      <last_date>2012.12.10</last_date>
+    </soft>
+    <soft>
+      <anchor>#BMotion</anchor>
+      <name>ブラウン運動アニメーション</name>
+      <explanation>ブラウン運動のシミュレーションプログラム。</explanation>
+      <last_date>2004.11.28</last_date>
+    </soft>
+    <soft>
+      <anchor>#GDLer</anchor>
+      <name>CompleteGetter</name>
+      <file>CompleteGetter.exe</file>
+      <explanation>指定したページをリンク先も含めて保存するソフト。Yahooフォトの一括保存や埋め込み動画／音声の保存、広告の一括削除もできる。</explanation>
+      <last_date>2013.03.09</last_date>
+      <rel_note>
+        <version>6.42</version>
+        <issue type="add">外部ドメインのファイル保存で、保存ファイルのリスト表示形式にページタイトルを追加。</issue>
+        <issue type="add">解析詳細情報で、同一の外部ドメインへリンク数が多い場合は、外部ドメインをファイル置き場として使っている可能性を考慮して「外部パスの保存」を推奨するによう機能追加。</issue>
+        <issue type="add">Cpgファイル拡張子の本ソフトへの関連付けに失敗した際に、必要なら管理者権限で再起動する機能を追加。</issue>
+        <issue type="add">アメーバブログとInternet Archiveの保存では、終了後に「広告削除をお勧めする」のダイアログ表示が出るよう機能追加。(削除しないと、ローカルでの表示が遅くなる)</issue>
+        <issue type="add">広告削除パターンに、アメーバを１つ追加(Facebookへリンクのもの)。</issue>
+        <issue type="add">いくつかのブログで、追跡階層の補正を導入(実験的オプション)。</issue>
+        <issue type="change">サイト保存の設定変更時の再起動で、設定済みのURLと保存パスを保持するように仕様変更。</issue>
+        <issue type="change">Cpgファイルのメニューで、「更新をチェックする」の位置を変更。</issue>
+        <issue type="fix">バッチ登録で、空白を含む保存ファイル名を登録できなかったバグを修正。</issue>
+        <issue type="fix">外部ドメインのファイル保存で、保存ファイルのリストを開く際に、「HTMLファイルを開く方法」の設定が反映されなかったバグを修正。</issue>
+        <issue type="fix">再帰処理の階層把握が管理できていなかったバグを修正。</issue>
+        <issue type="fix">外部ドメインの選択ダイアログで、途中終了を行った際にストールするバグを修正。</issue>
+      </rel_note>
+      <rel_note>
+        <version>6.41</version>
+        <issue type="add">解析詳細情報での画像選択において、上位階層のAlias形式のリンクも選択できるよう機能強化。</issue>
+        <issue type="fix">更新ログ(*.cpg)のみをON(データフォルダやAliasなど全てOFF)にすると、更新ログの作成に失敗するバグを修正。</issue>
+        <issue type="fix">Agent利用の必要不要の判定が甘かったので修正。</issue>
+      </rel_note>
+      <rel_note>
+        <version>6.40</version>
+        <issue type="add">バッチ処理機能を追加。</issue>
+        <issue type="add">Alias形式のリンクについても、解析詳細情報ボタンから画像のみを選択できるよう機能追加。</issue>
+        <issue type="change">タイトル取得に失敗には、上位ページのタイトル取得を試みる仕様に変更。</issue>
+        <issue type="change">Yahoo!フォトについて、ページの仕様変更に対応。</issue>
+        <issue type="fix">「～/」型のリンクについて、ローカルでは「～/index.html」として補正する機能のバグを修正。</issue>
+        <issue type="fix">ドライブ直下に新規フォルダを作成すると、アプリケーションエラーで落ちるバグを修正。</issue>
+        <issue type="fix">ドライブ直下に保存できなかったバグを修正。</issue>
+        <issue type="fix">統合管理ツール(仮称)について、表示の不具合を修正。</issue>
+      </rel_note>
+      <rel_note>
+        <version>6.39</version>
+        <issue type="add">「hoge.jpg?fugafuga」のように余分な文字列が付加されたファイルの保存に対応(「hoge.jpg」として保存されます)。</issue>
+        <issue type="add">拡張子が.shtmlであるページを、.phpや.asp .aspx と同様の扱いとして保存対象へ追加。</issue>
+        <issue type="change">タイトル取得の解析範囲を、先頭1KBから2KBに仕様変更。</issue>
+      </rel_note>
+      <rel_note>
+        <version>6.38</version>
+        <issue type="add">Internet Archive からの保存において、絶対パスのリンクにも対応(これまでは相対パスのみ対応)。</issue>
+        <issue type="add">広告削除パタンに、Infoseekを２つ追加。</issue>
+        <issue type="add">Phpページへの対応を強化。<br></br>単純なURLベース(GET型)の構造であれば、Htmlサイトと同様にサイト保存が可能になりました。</issue>
+        <issue type="add">連続して辿れるリンク階層の上限を、これまでの“最大80階層”から“無制限”へと機能強化。</issue>
+        <issue type="change">“タイトルに「404」を含むページをNotFoundとして扱う”がONならば、InfoseekのNot Foundページ(サーバ応答としては正常Foundが返る)も404扱いする仕様へ変更。</issue>
+        <issue type="fix">拡張子「.html」の保存パスで、「.html.html」になることがあるバグを修正。</issue>
+        <issue type="update">アーカイブの圧縮形式をLzhからZipに変更。</issue>
+        <issue type="update">統合管理ツール(仮称β版)の同梱を開始。</issue>
+      </rel_note>
+      <rel_note>
+        <version>6.37</version>
+        <issue type="add">スタイルシート(.css)における @import記述 に対応。</issue>
+        <issue type="add">「ページ解析の詳細表示」ダイアログから、推奨オプションをボタン一発で反映(設定)できるように機能追加。</issue>
+        <issue type="add">「～/」形式のリンクを、ローカルでも動作するように補正する機能を追加。</issue>
+        <issue type="add">「../*.html」を「.././*.html」と表記したリンク形式にも対応。</issue>
+        <issue type="add">ファイル名において、タイトル取得の結果に使用禁止文字が含まれていた場合は、アンダーバーに自動変換する機能を追加。</issue>
+        <issue type="add">単体/連番DL時の仕様を「IE6.0 + WinXP → IE8.0 + Win7」を装ってアクセスする仕様に変更。</issue>
+        <issue type="add">エラーログビューワにおいて、エラーファイルの元URLと保存先ファイルのパスを表示する詳細タブを追加。</issue>
+        <issue type="fix">データ形式変更により取得できなくなっていたYoutubeの動画タイトル取得に、再対応。</issue>
+      </rel_note>
+      <rel_note>
+        <version>6.36</version>
+        <issue type="add">簡易解析機能（ページ解析ボタンから表示）において、Yahooフォトの「サムネイル表示」にも対応。</issue>
+        <issue type="add">これまでは「リスト表示」のページのみからしか保存できなかったが、「サムネイル表示」の場合は「リスト表示」のURLを自力で取得するように機能追記。</issue>
+        <issue type="add">Arias補正において、コレまでは同位か下位へのパスのみしか扱えなかったが、上位パスについても扱えるように変更。</issue>
+        <issue type="fix">空白を含むローカルパスの保存済みHTMLをCPGファイルから開く際に、空白で分割されてしまうバグを修正。</issue>
+        <issue type="fix">追跡リンク選択ページにおいて「PHPをHTMLとして扱う」のチェックが無効になっていたバグを修正。</issue>
+        <issue type="fix">参照ボタン時のFLVファイルの拡張子判別にバグがあったので修正。</issue>
+        <issue type="fix">エラーログビューワ（β版）にて、「検索階層が深すぎるために保存に失敗」の項目のうち、「異なる検索経路において成功」しているURLも「保存に失敗」と誤検出してしまっていたバグを修正。</issue>
+        <issue type="fix">更新チェックにて、前回「NotFound」だったページの調査が省略されていたバグ（デグレード）を修正。</issue>
+      </rel_note>
+      <rel_note>
+        <version>6.35.yt0807</version>
+        <issue type="add">Youtubeの仕様変更（2009.7月下旬）に対応。</issue>
+      </rel_note>
+      <rel_note>
+        <version>6.35</version>
+        <issue type="add">追跡リンク選択、において「直のリンク先から選択する」の他に「キーワードを含む"URL"のみを選択する」の機能を追加。<br /><span>→</span><span style="font-weight: bold;">ブログのカテゴリ単位での保存</span><span>ができるようになりました♪</span></issue>
+        <issue type="add">javascriptファイル(*.js)内のリンクも追跡する機能を追加。</issue>
+        <issue type="add">追跡リンクパターンに「*.load('[URL]') 」を追加。</issue>
+        <issue type="add">ページタイトルの取得機能を改良（UTF-8/16に対応）。</issue>
+        <issue type="add">単体／連番NotFound検出プラグインの同梱開始（zNotF_SrsDL0629.cpi）。</issue>
+        <issue type="update">単体／連番NotFound検出プラグインの仕様書を更新(Ver.1.00)。</issue>
+        <issue type="fix">外部ドメインの埋め込みファイル（画像や音声ファイル）を保存する機能のバグを修正。<br /><span>･･･2年ほど前からデグレード（動作不全）してました(汗)。</span></issue>
+        <issue type="fix">srcでのリンク記述において、["]も[']も用いない直記述のパスの解析バグを修正。</issue>
+        <issue type="fix">Youtubeの動画本体を保存する際に、保存ダイアログでの拡張子判別(*.flv)に失敗していたバグを修正。</issue>
+      </rel_note>
+      <addtional_log>
+        <span class="version_log">
+          <a href="../diary/2006/nikki-09gatu.html#CompGetter6" target="main">Version 6.00</a>
+          <pre>　・全て実行コードによるビルドに変更。GUIにかかわる全ての部分をゼロから組みなおす。
+　　よって動作が高速化。
+　・WsLibAB4.dllが不要となる。
+　・ページ名取得を改良。
+　　改行自動削除、リファラ利用、nkf32.dllを利用した文字化け対策。
+　・ブラウザ（IE等）からのリンクのＤ＆Ｄに対応。
+　・Cpgでの関連リンク登録が、Webブラウザ／ファイラ（Explorer等）の
+　　両方からのＤ＆Ｄに対応。
+　・スレッドのコンフリクトを今度こそ回避。
+　・NALib.apiは一切使えない仕様に変更（つまり、Win Me/2000/XP環境限定に）。
+　・エラー箇所の記録を廃止。
+　・画像や動画に限らず、あらゆるファイルを単体保存できる機能を追加。
+　　いわゆる簡易ダウンローダーとしても使えます。
+　・単体ファイル／連番保存の際に、ダウンロード状況を監視できるように
+　　仕様変更（つまり、重くてもフリーズしない）。
+　・その他、あちこち変更。</pre>
+        </span>
+      </addtional_log>
+    </soft>
+    <soft>
+      <anchor>#PicRip</anchor>
+      <name>ふぉとりぱ！</name>
+      <explanation>指定したフォルダ以下から画像ファイルを抜き出すソフト。</explanation>
+      <last_date>2006.06.10</last_date>
+    </soft>
+    <soft>
+      <anchor>#TabMemo</anchor>
+      <name>両手たぶメモ</name>
+      <file>TabTextList.exe</file>
+      <explanation>ショートカットキー操作に特化した、軽快なタブメモ帳。プラグインで任意のテキスト編集機能を追加可能。</explanation>
+      <last_date>2017.01.03</last_date>
+      <rel_note>
+        <version>2.39</version>
+        <issue type="add">クリップボードの文字コードが、EUC、JIS、UTF-8、UTF-16 の場合の、テキストの貼り付け補正をオプション化（無効化できる）。</issue>
+        <issue type="add">プラグイン選択支援機能を追加（β版）。</issue>
+        <issue type="add">キャレットの直前に数値計算式がある場合には、その計算式を選択状態にする機能を追加。</issue>
+        <issue type="add">「ヘルプ＞本体の格納フォルダを開く」機能を追加。</issue>
+        <issue type="add">プラグイン「外部App連携」にて、複数の実行ファイルの連続実行機能を追加。</issue>
+        <issue type="add">プラグイン「ブラウザを選択してURLを開く」に、FireFoxを追加。</issue>
+        <issue type="change">「テキスト・サイド・メニュー」の名称を「スマート・メニュー」に変更。</issue>
+        <issue type="change">ファイルの「読み取り専用」属性のOn/Off時には、本アプリケーション上での「一時的な読み取り専用化」も連動してOn/Offする仕様に変更。</issue>
+        <issue type="change">印刷機能のタイトル出力仕様を変更（「test」になるケースがあった）。</issue>
+        <issue type="change">プラグイン仕様書( PlugInSpecification.txt )のマークアップを変更。</issue>
+      </rel_note>
+      <rel_note>
+        <version>2.38</version>
+        <issue type="add">クリップボードの文字コードが、EUC、JIS、UTF-8、UTF-16 の場合にもテキストの貼り付けに対応（※文字コードの自動判定に成功した場合のみ）</issue>
+        <issue type="add">必須モジュールの存在を起動時に確認する機能、を追加。</issue>
+        <issue type="add">プラグイン「サブノート・アクセサリ」において、「Googleで検索」機能の動作を軽量化。</issue>
+        <issue type="add">プラグイン「サブノート・アクセサリ」において、「weblioで英和検索」機能を追加。</issue>
+      </rel_note>
+      <rel_note>
+        <version>2.37</version>
+        <issue type="add">プラグイン「動画再生」において、再生コントロールのタブ移動機能、プラグイン経由でのリストへの登録機能を追加。</issue>
+        <issue type="change">サブノートペインの、格納先フォルダの動作仕様を変更。</issue>
+        <issue type="fix">「ツール＞オプション」でのタブ切り替え時で、不要なボタン表示が残るバグを修正。</issue>
+      </rel_note>
+      <rel_note>
+        <version>2.36</version>
+        <issue type="add">タブバーにコンテキストメニューを追加。</issue>
+        <issue type="add">新規タブ追加時に、そのテキストを右端で折り返すか否かをサイズに応じて自動判別するオプションを追加。</issue>
+        <issue type="add">保存モードに「常時（10分起き、もしくはフォーカスが外れたら保存）」を追加。</issue>
+        <issue type="add">プラグイン「ブラウザを指定してURLを開く」を追加。</issue>
+        <issue type="change">開いているタブが無い場合に、「公式ユーティリティ」と「Note」ボタンを無効化するよう仕様変更。</issue>
+        <issue type="change">クイックリンクでのサブメニューの表示順序を仕様変更。</issue>
+        <issue type="fix">タブ無しで本アプリケーションを起動した場合に、画面表示が「loading...」のままになるバグを修正。</issue>
+        <issue type="fix">テキストの右端での折り返しの有無を切り替えた際に「編集有り」のフラグが解除されるバグを修正。</issue>
+        <issue type="fix">「直前に閉じたファイルを開く」すると「×」（ファイルを閉じる）ボタンが消えるバグを修正。</issue>
+        <issue type="fix">プラグイン「割り込みパネル」で、とある条件下で不適切な再読み込み確認ダイアログが出るバグを修正。</issue>
+      </rel_note>
+      <rel_note>
+        <version>2.35</version>
+        <issue type="add">背景色が黒（もしくは輝度が0.4未満）のときに、IME変換時の背景色もダーク色になるよう機能追加。</issue>
+        <issue type="add">プラグイン「外部App連携」を追加。</issue>
+        <issue type="change">プラグイン「公式ユーティリティ」の構成を変更。</issue>
+        <issue type="fix">読み取り専用のテキストファイルに対して、行数表示が機能しなかったバグを修正。</issue>
+      </rel_note>
+      <rel_note>
+        <version>2.34</version>
+        <issue type="add">UTF8(N)の判定精度を大分向上。</issue>
+        <issue type="add">右上のフォーカス状態表示アイコン(“NOTE”の文字)へのHover動作で、公式ユーティリティのメニューを呼び出す機能を追加。</issue>
+        <issue type="add">プラグイン「割り込みパネル」に、ESCボタン(閉じる動作)を追加。</issue>
+        <issue type="add">アクティブ化（マウス クリックを除く）したときに、キャレットの位置を強調する効果を追加。</issue>
+      </rel_note>
+      <rel_note>
+        <version>2.33</version>
+        <issue type="add">プラグインの「日付を挿入」を『Ctrl+:』のショートカットキーで呼び出せるよう機能追加。</issue>
+        <issue type="add">ローカルファイルの「開く」のところに「Ctrl+U」の表記を追加。</issue>
+        <issue type="change">「ヘルプ＞サポート」で提供していた機能を「ツール＞公式ユーティリティ」の位置＆名称へ変更。</issue>
+        <issue type="fix">タブの追加と削除に関するバグ（デグレード）を修正(テキストのフォーカスが外れる、IE描画が動作不良)。</issue>
+        <issue type="add">プラグイン「日付を挿入」で、挿入できる日付のフォーマットの種類を拡充。</issue>
+        <issue type="add">プラグイン「割り込みパネル」で、「Ctrl＋F」押下時の動作をサポート（※項目リストの呼び出しと同等）。</issue>
+        <issue type="change">プラグイン「構成サブセット」の名称を「メンテナンス」へ変更。</issue>
+        <issue type="change">プラグイン「制御識別子を追加」の名称を「制御識別子／localリンクを挿入する」へ変更。</issue>
+        <issue type="fix">プラグイン「周辺を開く」で、空白を含むパスが開けなかったバグを修正。</issue>
+      </rel_note>
+      <rel_note>
+        <version>2.32</version>
+        <issue type="add">ファイルの“読み取り専用”属性の変更機能を追加。</issue>
+        <issue type="change">編集を一時的に禁止するメニュー位置を、変更。</issue>
+        <issue type="change">テキストサイドメニューにおいて、ローカルパスの処理メニューをグループ化。</issue>
+        <issue type="fix">サブノートペインの表示操作ボタンへのマウスオーバーが、本体が非Activeの時も反応するバグを修正。</issue>
+        <issue type="add">プラグインに「割り込みパネル」と「周辺を開く...more」の機能を追加。</issue>
+      </rel_note>
+      <rel_note>
+        <version>2.31</version>
+        <issue type="add">フォーカス状態が外れたときは、文字の色を淡色にする機能を追加(オプションで解除可能)。</issue>
+        <issue type="add">フォントの色と背景色の変更機能を追加。</issue>
+        <issue type="add">数字についてのあいまい検索をサポート（1Byte--&gt;1/2Byte数字の両方を検索）。</issue>
+        <issue type="change">サブノートペインの表示幅を拡大(操作ボタンを小さくしてポップアップメニューへ仕様変更)。</issue>
+        <issue type="fix">NULL文字を含むファイルの読み込み時に、警告ダイアログが２個重ねて出るバグを修正。</issue>
+        <issue type="update">両手たぶメモ テキスト処理プラグイン 仕様書(SampleItemList.txt)を更新(Ver1.30)。</issue>
+      </rel_note>
+      <rel_note>
+        <version>2.30</version>
+        <issue type="add">検索ダイアログでの、検索実行中のテキスト操作と検索中断機能を新サポート。</issue>
+        <issue type="add">検索ダイアログで「検索対象フォルダを追加」の機能を新サポート。</issue>
+        <issue type="add">項目リストとテキスト窓との間の移動について、ショートカットキーを追加。</issue>
+        <issue type="add">「項目番号」で項目リスト作成において、ローマ数字の項目番号にも対応。</issue>
+        <issue type="add">テキストサイドメニューの呼び出しショートカットキーとして「Ctrlキーを2回押す」を追加。（オプション）</issue>
+        <issue type="change">項目リスト情報タブ操作と、項目リスト操作のショートカットキーを仕様変更。</issue>
+        <issue type="change">検索と置換のダイアログについて、ダイアログ内だけでなくタブノート内でESCキーが押された場合にもダイアログを閉じるように仕様変更。</issue>
+        <issue type="change">プラグイン実行時に選択テキストが空の場合は、クリップボードのURLを選択テキストとして扱うように仕様変更。（オプション）</issue>
+        <issue type="change">CD上のファイルを開いたままCDを抜いたとき出る、「メディアが挿入されていません」のエラーダイアログを抑制するよう仕様変更。</issue>
+        <issue type="change">名前を付けて保存の時、拡張子を省略した場合には自動補完せずに「拡張子なし」でファイルを保存するように仕様変更。</issue>
+        <issue type="fix">ReadOnly属性のファイルを削除するときに、「保存に失敗」という不要なダイアログが出るバグを修正。</issue>
+        <issue type="fix">コマンドラインからファイルを追加時に、稀に起動できなくなるバグを修正。</issue>
+        <issue type="fix">Evernote同期支援関連のプラグインファイルの一部が、誤って削除されていた「ファイル格納漏れ」を修正。</issue>
+        <issue type="add">プラグイン「入力支援機能」を改良。</issue>
+      </rel_note>
+      <rel_note>
+        <version>2.28</version>
+        <issue type="change">選択中のタブをハイライト表示するよう仕様変更。（オプションで非表示無しにすることも可能）</issue>
+        <issue type="change">ローカルファイルの起動は、起動処理自体を別プロセスで実行するように仕様変更。</issue>
+        <issue type="change">別プロセスによる書き換え時のリロードで、UTF8⇔UTF8(N)の揺れは自動吸収するよう仕様変更。</issue>
+        <issue type="change">読み取り専用属性のフィルは、「一時的に編集不可」の状態で読み込むように仕様変更。</issue>
+        <issue type="change">ステータスバーの、更新／作成日時の欄が狭くて見難かったので幅を拡大。</issue>
+        <issue type="fix">文字コードの自動判別でEUC／JISコードと判別され且つnkf32.dllが見つからない場合に、Shift-JISでの読み込みも出来なくなるバグを修正。</issue>
+        <issue type="fix">保存に失敗した場合でも、何も通知されていなかったバグを修正。</issue>
+      </rel_note>
+      <rel_note>
+        <version>2.27</version>
+        <issue type="change">長押し右クリックで、Ctrl＋右クリックと同等機能として認識するように仕様変更。</issue>
+        <issue type="change">プラグイン「Evernote同期を今すぐ実行する」の動作において、「Microsoft Visual C++ 2010 再頒布可能パッケージ (x86)」が不要となりました。</issue>
+        <issue type="add">プラグイン「サブノート アクセサリ」で、クリップボードもしくは選択キャレットにあるURLを簡単に登録する機能を追加。</issue>
+        <issue type="fix">プラグイン「サブノート アクセサリ」で、「https」がURLとして認識されなかったバグを修正。</issue>
+      </rel_note>
+      <rel_note>
+        <version>2.26</version>
+        <issue type="add">サブノートペインに履歴機能を追加。</issue>
+        <issue type="add">URLとして認識するプロトコルに「evernote://」を追加。</issue>
+        <issue type="add">復旧したファイルがタブに無い場合には、追加する機能を追加。</issue>
+        <issue type="change">ローカルリンクが実行可能形式(exe,bat,vbs)の場合に、テキストサイドメニューの表示名を「開く」→「実行する」へ変更。</issue>
+        <issue type="change">ファイル／WebページのDrop時に、Drop元のアプリをロックしないように仕様変更。</issue>
+        <issue type="change">いくつかのダイアログ(検索、ドロップ動作、バージョン情報)について「ESCキーでも抜ける」仕様に変更。</issue>
+        <issue type="change">テキストサイドメニューにおいて、URLを処理プラグインを「URLの処理」メニューの配下からも選択できるように仕様変更。</issue>
+        <issue type="update">両手たぶメモ  テキスト処理プラグイン　仕様書をVer1.21へ更新(※以前のプラグインはそのまま利用可能です)。</issue>
+        <issue type="fix">ローカルリンク挿入で、稀に不正になることがあるバグを修正。</issue>
+      </rel_note>
+      <rel_note>
+        <version>2.25</version>
+        <issue type="change">項目リストの構成候補(過去の項目から推定されるのもの)があった場合は、項目リスト未構成からダイレクトに作成できるようにテキスト・サイド・メニューの仕様を変更。</issue>
+        <issue type="fix">プラグインのメニュー数が、32個より多い場合にアプリケーションエラーになることがあるバグを修正。</issue>
+      </rel_note>
+      <rel_note>
+        <version>2.24</version>
+        <issue type="add">項目リストの「再構成候補を表示」する機能を強化。</issue>
+        <issue type="change">プラグイン「選択範囲をメール送信」において、OP25BされているSMTPサーバ経由のメール送信を、以前より高速化。</issue>
+        <issue type="add">選択文字列でEvernoteとTwitterを検索するプラグインを追加。</issue>
+        <issue type="add">プラグイン「Evernote同期を今すぐ実行する」において、Evernoteクライアント経由でアップロードする選択肢を追加(メールアカウント不要になりました！)。</issue>
+        <issue type="change">プラグイン「Evernote同期を今すぐ実行する」において、TABインデントが保持されるように仕様変更(スペースに変換されます)。</issue>
+        <issue type="change">「最近閉じたファイル一覧」ダイアログを可変窓枠に仕様変更。</issue>
+        <issue type="change">ファイルごと削除、を別スレッドで行うように仕様変更。</issue>
+        <issue type="fix">サブノートペインへの出力内容で、javascript内で「&lt;」を利用していると縦幅設定が上手くいかないことがあるバグを修正。</issue>
+        <issue type="fix">WinME環境において、本アプリの再起動に失敗するバグを修正。</issue>
+      </rel_note>
+      <rel_note>
+        <version>2.23</version>
+        <issue type="add">タブバーの多段表示機能を追加。</issue>
+        <issue type="add">タブ一覧表示で、自身以外の「両手たぶメモ」で開いているファイルへのジャンプリスト表示を追加。</issue>
+        <issue type="add">項目リストにおいて、選択済みアイテムをもう一度左クリックすると「再構成候補を表示」する機能を追加(※更新ボタンを右クリックと同じ機能)。</issue>
+        <issue type="add">項目リストにおいて、ESCキーでの復帰に対応。</issue>
+        <issue type="add">項目リストにおいて、Ctrl + Shift + PageUp / PageDown での高速移動に対応。</issue>
+        <issue type="add">「URLを開くブラウザの設定」で指定されたブラウザが見つからない場合に、OS標準で開くオプションを追加。</issue>
+        <issue type="add">起動時／終了時の追加アクションについて、デフォルト候補の表示機能を追加。</issue>
+        <issue type="add">プラグイン「選択テキストをメール送信」に、BCC送信機能を追加。</issue>
+        <issue type="change">項目リストからのジャンプにおいて、非表示部分のスクロール幅を『下から3行→16行』へ変更。</issue>
+        <issue type="change">多重起動の許可条件について、「直上フォルダ名が異なる」から「直上フォルダ名、もしくはその上のフォルダ名が異なる」へ仕様変更。</issue>
+        <issue type="change">Evnt版を、標準版へ統合。※本機能は Windows XP以降でのみサポート。</issue>
+        <issue type="fix">既存タブで且つ起動後に削除されたファイルを開こうとすると、アプリケーションエラーで落ちることがあるバグを修正。</issue>
+      </rel_note>
+      <rel_note>
+        <version>2.22</version>
+        <issue type="add">保存済みファイルが、外部アプリケーションから変更された場合に「変更されました。置き換えますか？」の確認ダイアログを出す機能を追加。</issue>
+        <issue type="add">テキストテンプレートやプラグインを、「機能ユーティリティ」から容易に追加できる機能を追加(サブノートペインからタブノートへD＆Dで追加可能になりました)</issue>
+        <issue type="change">起動済み本体に対して、コマンドライン経由の複数ファイル同時追加の処理ロジックを変更。</issue>
+        <issue type="change">自動バックアップの最短間隔を変更。</issue>
+        <issue type="change">項目リストでジャンプしたときのスクロール仕様を変更。</issue>
+        <issue type="change">項目リストでジャンプしたときの反転長の最大値を変更。</issue>
+        <issue type="change">項目サムネイルで、TAB文字の表示幅に変更。</issue>
+        <issue type="fix">公式プラグインの「URLをサブノートペインで開く」で、https(Evernote等)が開けなかったバグを修正。</issue>
+      </rel_note>
+      <rel_note>
+        <version>2.21</version>
+        <issue type="add">同階層のファイルのみならず、配下のファイルからも検索する機能を追加。</issue>
+        <issue type="add">「近くのファイルからも検索」のロジックを効率化。</issue>
+        <issue type="change">検索結果のウィンドウの大きさを変更できるように仕様変更。</issue>
+        <issue type="fix">「近くのファイルからも検索」のバグを修正。</issue>
+      </rel_note>
+      <rel_note>
+        <version>2.20</version>
+        <issue type="add">入力支援機能を追加！(※Ctrl + Space で候補の文字列を表示)</issue>
+        <issue type="add">文字コード指定保存に、「BOM無しUTF8」を追加。</issue>
+        <issue type="add">起動時実行アプリ設定機能を追加。</issue>
+        <issue type="add">クリップボードのファイルパスから既存ファイルを追加するメニューを追加。</issue>
+        <issue type="add">プラグインへ渡される情報に、項目リストの情報を追加。</issue>
+        <issue type="change">無限Undoの実装を軽量化。</issue>
+        <issue type="change">アプリ再起動時、作成したバッチファイルを削除する仕様に変更。</issue>
+        <issue type="change">改行判定を、文字コードに対して決め打ちせずに、CR/LFの出現回数から判定する仕様に変更。</issue>
+        <issue type="fix">終了時実行アプリのキックに失敗することがあるバグを修正。</issue>
+        <issue type="update">両手たぶメモ  テキスト処理プラグイン　仕様書をVer1.20へ更新(※以前のプラグインはそのまま利用可能です)。</issue>
+      </rel_note>
+      <rel_note>
+        <version>2.15</version>
+        <issue type="add">終了時に、任意のアプリケーションを実行する機能を追加。</issue>
+        <issue type="add">サブノートペインへフォーカスを移す機能を、メニューに追加(ショートカットキーも対応）。</issue>
+        <issue type="add">テキスト サイド メニューの呼び出しキーに、「Ctrl + Alt+ →」を追加。</issue>
+        <issue type="add">ボタンにツールチップ表示を追加。</issue>
+        <issue type="add">サブノートペイン内でも通常のショートカット（コピペなど）を使用出来る様にの実装を改良。</issue>
+        <issue type="add">公式プラグインの「選択範囲をメールで送信」を、毎回個別に送信先とタイトルを変更出来、また送信を別プロセスで行う（テキストにすぐ制御が戻る）ように機能アップ。</issue>
+        <issue type="fix">検索ダイアログの「全て検索」系の結果がゼロ件のときに結果表示リストをダブルクリックすると、アプリケーションエラーで落ちるバグを修正。</issue>
+        <issue type="change">テキスト サイド メニュー内の、文字コード指定再読み込みのメニュー位置を変更。</issue>
+        <issue type="update">プラグインのC/C++用サンプルソースの、メール送信プラグインを更新。</issue>
+      </rel_note>
+      <rel_note>
+        <version>2.14</version>
+        <issue type="add">作成日時と最終更新日時の表示をステータスバーに追加。</issue>
+        <issue type="add">項目リストペインの内容を、テキストとしてコピーできる機能を追加。</issue>
+        <issue type="add">サブノート上から、テキスト編集画面にフォーカスを戻すショートカット(Alt+R)を追加。</issue>
+        <issue type="add">項目リストペインの更新ボタンに、ツールチップ表示機能を追加。</issue>
+        <issue type="change">メニューバーの構成を一部変更(項目リストペインの編集メニューを配置)。</issue>
+      </rel_note>
+      <rel_note>
+        <version>2.13</version>
+        <issue type="add">メニューに「ヘルプ＞サポート」の項目を追加(更新チェック等の機能)。</issue>
+        <issue type="add">公式プラグインの「更新確認／機能ユーティリティ（旧名：新バージョンを検索）」のプラグイン一覧表示機能ページにおいて、「プラグインの削除」機能を追加</issue>
+        <issue type="fix">項目リストが空の状態で、クリップボードの文字列での再構成が効かないバグを修正。</issue>
+        <issue type="fix">タブが無い状態でサブノートペイン操作用ボタン「変更」を押すと、アプリケーションエラーになることがあるバグを修正。</issue>
+        <issue type="change">公式プラグインの「URLを開く」のおいて、開き方を変更（TwitterページもOKになりました）。</issue>
+        <issue type="change">公式プラグインの「サブノート・アクセサリ」において、新しいバージョンをフォルダごと上書きしても、旧定義ファイルが残るように仕様変更。</issue>
+      </rel_note>
+      <rel_note>
+        <version>2.12</version>
+        <issue type="change">項目リストペインで、↓キーを押すとドロップダウンする仕様に変更。</issue>
+        <issue type="add">項目リストペインの更新ボタンに、「次行」「行の先頭に」で再構成する機能を追加。</issue>
+        <issue type="add">サブノートペインに「タイトルのみ」の表示状態を追加。</issue>
+        <issue type="add">サブノートペイン操作用ボタンに「変更」ボタンを追加(※サブノートペイン表示系のプラグインメニューが選択的に表示されます)。</issue>
+        <issue type="add">公式プラグインの「サブノート・アクセサリ」に、「選択文字列をgoogle検索」と「カレンダー表示」の機能を追加。</issue>
+        <issue type="update">両手たぶメモ  テキスト処理プラグイン　仕様書をVer1.13へ更新(※以前のプラグインはそのまま利用可能です)。</issue>
+        <issue type="update">プラグインのC/C++用サンプルソースのフォルダ構造とビルド用バッチファイル変更(VC++2010のIDE環境下からコンパイル可能になりました)。</issue>
+        <issue type="update">プラグインのC/C++用サンプルソースに、VC++2010用のプロジェクト設定ファイル(*.vcxproj)を追加。</issue>
+        <issue type="update">プラグインのC/C++用サンプルソースに、メール送信プラグインを追加。</issue>
+        <issue type="update">公式プラグインのファイルを一部更新(プラグイン仕様Ver1.13に対応)。</issue>
+      </rel_note>
+      <rel_note>
+        <version>2.11</version>
+        <issue type="add">サブノート ペイン操作用のボタンを追加(※これまでは「テキスト・サイド・メニュー」からのみ操作可能だった)。</issue>
+        <issue type="change">'一時的に編集不可'をONにしたテキストについてファイル削除時の確認を通常の１回→２回へ変更した。</issue>
+        <issue type="change">履歴ジャンプの表示を少々変更(90分超えたら"時間"表記)。</issue>
+        <issue type="fix">タブが無い状態で「直前に閉じたファイルを開く」の操作をし、その直後に閉じるとアプリケーションエラーになるバグを修正。</issue>
+        <issue type="fix">タブが無い状態で「直前に閉じたファイルを開く」の操作をすると、リサイズするまでテキストが表示されないバグを修正。</issue>
+        <issue type="fix">特定の窓のサイズ(480x360)で終了すると、次回起動時においてリサイズするまでテキストが表示されないバグを修正。</issue>
+        <issue type="fix">公式プラグインのファイルの修正（※「選択範囲をメール送信」の設定ファイルにおいて、To, Fromが逆に認識されていたバグを修正）。</issue>
+      </rel_note>
+      <rel_note>
+        <version>2.10</version>
+        <issue type="add">無限UNDOに、「何分前？」を指定して一気に「元に戻す／やり直す」を実行する“履歴ジャンプ”機能を追加。</issue>
+        <issue type="add">公式プラグインに、「サブノート・アクセサリ(任意のHTMLファイルをサブノートペインに出力)」機能を追加。（※この機能を用いることで、C/C++コンパイル環境無しで、HTMLとJavascriptのみによるプラグイン機能追加が可能になりました。）</issue>
+        <issue type="add">公式プラグインに、「予め設定したメールアドレスへ、選択キャレットを１アクションでメール送信する」機能を追加。（※POP3/SMTP対応のメールアカウントが必要になります。）</issue>
+        <issue type="change">掲載場所の利用規定変更に伴い、プラグインのサンプルソースの圧縮形式をLzh→Zipへ変更（中身に変更無し）。</issue>
+        <issue type="fix">プラグイン検出時のバグ（本体アプリを終了するまでプラグイン削除不可になることがある）を修正。</issue>
+      </rel_note>
+      <rel_note>
+        <version>2.07</version>
+        <issue type="change">「Read me.txt」を“読み取り専用(ReadOnly)”で開く仕様へ変更。</issue>
+        <issue type="fix">ローカル画像のサムネイル表示バグ(Ver.2.06でデグレード)を修正。</issue>
+      </rel_note>
+      <rel_note>
+        <version>2.06</version>
+        <issue type="add">項目リストペインの「リスト更新」を、Enterキーの他にボタンからも出来るように機能追加。</issue>
+        <issue type="add">一時的に編集不可にする設定を、機能追加。</issue>
+        <issue type="add">公式プラグインの「バージョン確認」に、「本体の格納場所を開く」機能を追加。</issue>
+        <issue type="change">「表示中のファイルを削除」の動作を「直ぐ削除⇒上書き後削除」へ仕様変更。</issue>
+        <issue type="change">アーカイブの圧縮形式をLzhからZipに変更。</issue>
+        <issue type="fix">項目リストのサムネイルで、偶に以前の文字列が残って表示されるバグを修正。</issue>
+      </rel_note>
+      <rel_note>
+        <version>2.05</version>
+        <issue type="add">Ctrl + Shift + N で、「新規作成」の機能を追加。</issue>
+        <issue type="add">Ctrl + O で、「既存ファイルを開く」の機能を追加。</issue>
+        <issue type="add">本体を再起動する機能を追加。</issue>
+        <issue type="add">「local.」の識別子が無くとも、選択(キャレット反転)されたローカルファイルのフルパスを、開く対象として扱う機能を追加。</issue>
+        <issue type="add">項目リストペインの下部に「情報ボックス」として、選択中の項目の「先頭／終端サムネイル」を表示する機能を追加。</issue>
+        <issue type="add">項目リストペインの下部に「情報ボックス」として、自動順送りで項目リストの「先頭サムネイル」を表示する機能を追加。</issue>
+        <issue type="add">項目リストペインに、「項目番号」でリスト作成する機能を追加。</issue>
+        <issue type="add">制御識別子(setting.)を追加。</issue>
+        <issue type="add">公式プラグインに、「制御識別子(setting.)」をファイルの先頭行に追加する機能を追加。</issue>
+        <issue type="add">公式プラグインに、画像のスライドショーの機能を追加。</issue>
+        <issue type="change">別名保存において、*.txt以外にならば拡張子フィルターにそれを追加する仕様に変更。</issue>
+        <issue type="change">メニュー「表示」のところに、「Ctrl+Tab」「Ctrl+Shift+Tab」のショートカットキーも表示(キー自体には以前から対応済み)。</issue>
+        <issue type="change">項目リストの、フォーカスの有無での表示仕様を変更。</issue>
+        <issue type="fix">別名保存時に、未保存の元ファイルの「変更あり」が解除されるバグを修正。</issue>
+        <issue type="fix">全てのタブを閉じた状態で、内容上無効なメニュー操作時を行うと異常終了することがあるバグを修正。</issue>
+        <issue type="fix">全てのタブを閉じた状態で終了した後に、ファイルをTabTextList.exe へＤ＆Ｄすると異常終了するバグを修正。</issue>
+        <issue type="fix">項目リストを更新時に、ドロップダウンが空白になることがあるバグを修正。</issue>
+        <issue type="update">項目リストについて、表示のサンプルファイルを同梱開始。</issue>
+        <issue type="update">C++プラグインのソース(TextPlugIn_CPP.lzh)の構造を変更。</issue>
+        <issue type="update">C++プラグインのソースに、デバッグ用の実行機能を追加。</issue>
+        <issue type="update">C++プラグインのソースを、VC++2010のcl.exeでもコンパイルできるように修正。</issue>
+      </rel_note>
+      <rel_note>
+        <version>2.04</version>
+        <issue type="add">Windows Millennium Edition / Windows 7 での動作をサポート。</issue>
+        <issue type="change">ガジェット幅の最大値を「環境編集」にて可変に仕様変更。</issue>
+        <issue type="change">ガジェットの幅変更を「1/2ずつ」から「3/4ずつ」に仕様変更。</issue>
+        <issue type="fix">右端のタブで表示していたファイルを削除してから再起動すると、アプリケーションエラーで落ちることがあるバグを修正。</issue>
+        <issue type="fix">全てのタブを閉じた状態でメニュー「編集」にポイントすると、アプリケーションエラーで落ちるバグを修正。</issue>
+        <issue type="fix">項目リストペインにて、履歴がドロップダウンへ追加されないことがあるバグを修正。</issue>
+        <issue type="fix">書式を「右端で折り返す」へ切り替える際に、サイズが大きいテキストにおいて内容の一部が失われるバグを修正。</issue>
+        <issue type="fix">コマンドライン経由で複数のファイルを開く際にアプリケーションエラーで落ちることがあるバグを修正。</issue>
+        <issue type="fix">異常終了時のリジューム操作において、文字化けすることがあるバグを修正。</issue>
+        <issue type="fix">「環境編集」でトラックバーの値を拾えないことがあるバグを修正。</issue>
+        <issue type="update">C/C++用のプラグイン作成サンプルソースを更新。</issue>
+      </rel_note>
+      <rel_note>
+        <version>2.03</version>
+        <issue type="add">テキスト・サイド・メニューでの割り当てキーを、カスタマイズする機能を追加。</issue>
+        <issue type="add">テキスト・サイド・メニューに「（サブノート ペインの）表示幅を半分にする」機能を追加。</issue>
+        <issue type="change">プラグインを、ショートカットキー「Ctrl+P」で呼び出せるように仕様変更。</issue>
+        <issue type="change">「タブの一覧を表示」において、表示中のテキストファイルにチェックマークを表示するように仕様変更。</issue>
+        <issue type="change">旧バージョンの格納フォルダに新バージョンのファイルを全て上書きした場合にも、「環境編集」の設定が引き継がれるように仕様変更。</issue>
+        <issue type="change">オフィシャルプラグイン（標準添付）のファイル名変更。</issue>
+        <issue type="fix">項目リストにおいて、日本語判定のEnterキーをリスト更新のEnterキーと誤認していたバグを修正。</issue>
+        <issue type="fix">「近くのファイルからも検索」にて検索文字列へジャンプしたことによる新規タブ追加後に、既存タブへの検索文字列へ飛べないことがあるバグを修正。</issue>
+        <issue type="fix">キャレットの反転範囲によって、URL/ローカルパスを開くのポップアップ位置が不正になるバグを修正。</issue>
+        <issue type="fix">ファイル追加に失敗した際のユーザー通知が抜けている箇所が複数あったので、修正。</issue>
+        <issue type="update">C/C++用のプラグイン作成サンプルソースを更新。</issue>
+      </rel_note>
+      <rel_note>
+        <version>2.02</version>
+        <issue type="add">項目リストペインで、ジャンプした先の続く文字列でリストを再構成する機能を追加。</issue>
+        <issue type="add">新バージョン検索プラグインを同梱開始。</issue>
+        <issue type="change">「テキスト・サイド・メニュー　⇒　項目リストペインの操作　⇒　編集」を選択した際に、項目リストのドロップダウンを表示するように仕様変更。</issue>
+        <issue type="change">アイコンへのファイルドロップでの起動の際のタブ追加位置を、「一番右側」から「前回のアクティブタグの右側」に仕様変更。</issue>
+        <issue type="change">項目リストペインのフォントを、テキストファイルのフォントに連動するように仕様変更（「環境設定」から連動解除も可能）。</issue>
+        <issue type="change">アクティブなタブを削除した際にこれまで“右隣”のタブを表示していたが、“直前”のタブ、無ければ“左隣→右隣”の順に表示するように仕様変更。</issue>
+        <issue type="fix">新規追加ファイルで項目リストペインの横幅指定が抜けていたバグを修正。</issue>
+        <issue type="fix">一番左端の右隣に新タブを追加すると、フォントが反映されなかったバグを修正。</issue>
+        <issue type="fix">キャレットの反転範囲によって、「テキスト・サイド・メニュー」のポップアップ位置が不正になるバグを修正。</issue>
+        <issue type="fix">テキストファイルを一つも開いていない状態で終了すると、アプリケーションエラーになるバグを修正。</issue>
+        <issue type="fix">アイコンへのD＆Dからのファイル追加において、サイズゼロのファイルが開けなかったバグを修正。</issue>
+      </rel_note>
+      <rel_note>
+        <version>2.01</version>
+        <issue type="add">リジューム時に、バックアップファイルを削除するボタンを追加。</issue>
+        <issue type="change">サブノート ペインは、最大でも縦320ptに収まるように仕様変更。</issue>
+        <issue type="change">メニューの「右側のタブを～」と「左側のタブを～」の表記を少々変更。</issue>
+        <issue type="change">検索ダイアログの表示位置を調整。</issue>
+        <issue type="fix">新規ファイルにフォントが適用されないバグを修正。</issue>
+      </rel_note>
+      <rel_note>
+        <version>2.00</version>
+        <issue type="add">サブノート ペイン 機能を追加。</issue>
+        <issue type="add">異常終了時に、保存していない編集中のテキストを復旧する機能を追加。</issue>
+        <issue type="add">項目リストペインにおいて、前回最後に表示していた内容を保持する機能を追加。</issue>
+        <issue type="add">C/C++での、プラグインのサンプルソースを同梱開始。</issue>
+        <issue type="update">プラグインの仕様書を更新。</issue>
+      </rel_note>
+      <rel_note>
+        <version>1.81</version>
+        <issue type="add">文字コードを指定して保存において、別名保存を実装した。</issue>
+        <issue type="add">検索リスト・ペインの横幅を任意に設定できるようにした。</issue>
+        <issue type="change">プラグインの処理、テキスト置換について仕様変更。これまでは選択部分に対する置換のみ反映していたが、選択部分が無い場合も「挿入」として反映するようにした。</issue>
+        <issue type="update">プラグインの仕様書を更新。</issue>
+      </rel_note>
+      <rel_note>
+        <version>1.80</version>
+        <issue type="add">無限アンドゥ機能を追加。</issue>
+        <issue type="add">ファイル自動作成、のファイル名を少々カスタマイズ可能とした。</issue>
+        <issue type="change">テキスト・サイド・メニュー、もしくはショートカットキーでの検索ペインを更新時、フォーカスを検索ペインの編集窓に移さない仕様に変更。</issue>
+        <issue type="change">タブの一覧表示を、ショートカット Ctrl+Shift+I で呼び出せるように仕様変更。</issue>
+        <issue type="fix">Webページのソース表示で、同名ファイルが存在する場合にタブへの追加に失敗するバグを修正。</issue>
+        <issue type="fix">「ファイルを開く(Ctrl+U)」にて開けなかった場合（関連付け不正等）に、ダイアログボックスでユーザ通知を行う仕様に変更（以前はノーアクション）。</issue>
+        <issue type="fix">「テキスト・サイド・メニュー(Ctrl+M)」のポップアップメニュー表示位置が不正になることがあるバグを修正。</issue>
+        <issue type="fix">ステータスバーのクリップボードの内容表示において、TABを含むテキストが不正な表示になることのあるバグを修正。</issue>
+      </rel_note>
+    </soft>
+    <soft>
+      <anchor>#AutoRemova</anchor>
+      <name>全自動双写像</name>
+      <explanation>USBメモリを介した複数台PCのフォルダ同期に最適なミラーリングソフト。簡易暗号化機能付き。</explanation>
+      <last_date>2012.08.18</last_date>
+    </soft>
+    <soft>
+      <anchor>#AB_WSLibDst</anchor>
+      <name>AB淡幻ライブラリ</name>
+      <explanation>ActiveBasic Ver. 4.x での開発支援ライブラリ。サンプルコードを含んだヘルプファイル付き。</explanation>
+      <last_date>2010.10.16</last_date>
+    </soft>
+    <soft>
+      <anchor>#WasfunLibAB</anchor>
+      <name>ActiveBasic Ver3.x 用のVer2.xエミュレート関数ライブラリ</name>
+      <explanation>ActiveBasic Ver 3.x に LineInput # ／ SetCsoftpStr ／ CsoftpStr$ 等をエミュレートします。</explanation>
+      <last_date>2005.08.03</last_date>
+    </soft>
+    <soft>
+      <anchor>#cpp_class</anchor>
+      <name>GetNumber</name>
+      <explanation>数値データを読み取る、Ｃ＋＋クラス。プログラマ向けのソースコードです。</explanation>
+      <last_date>2007.6.10</last_date>
+    </soft>
+    <soft>
+      <anchor>#WsCounter</anchor>
+      <name>WsCounter</name>
+      <explanation>[Webサイト作成支援] Gif画像カウンター。簡易アクセス解析付き。</explanation>
+      <last_date>2004.11.02</last_date>
+    </soft>
+    <soft>
+      <anchor>#WsfunPassScript</anchor>
+      <name>Wsfun汎用パスワードスクリプト</name>
+      <explanation>[Webサイト作成支援] JavaScriptによるパスワード認証スクリプト。</explanation>
+      <last_date>2005.01.08</last_date>
+    </soft>
+    <soft>
+      <anchor>#WsfunDataChangerScript</anchor>
+      <name>Wsfun日時切り替え文字列スクリプト</name>
+      <explanation>[Webサイト作成支援] 日時に応じて出力する文字列を変更するJavaScriptです。</explanation>
+      <last_date>2005.08.07</last_date>
+    </soft>
+    <soft>
+      <anchor>#almkr</anchor>
+      <name>Album Maker</name>
+      <explanation>任意のフォルダ内の画像をhtml形式の一つのアルバムにまとめるソフト。</explanation>
+      <last_date>2004.11.21</last_date>
+    </soft>
+  </soft_type>
+  <soft_type page="junk/dl_menu_junk.html">
+    <soft>
+      <anchor>#DKC</anchor>
+      <name>DrawKochCurve</name>
+      <explanation>コッホ曲線を描いて保存できるソフト。</explanation>
+      <page>junk/dl_menu_junk.html</page>
+      <last_date>2002.12.30</last_date>
+    </soft>
+    <soft>
+      <anchor>#unix_softke</anchor>
+      <name>UnixLike</name>
+      <explanation>Windowsのコマンドラインに、Unixのdu,ls,rmコマンドをエミュレートするソフト。</explanation>
+      <page>junk/dl_menu_junk.html</page>
+      <last_date>2007.06.10</last_date>
+    </soft>
+    <soft>
+      <anchor>#ExplrSortType</anchor>
+      <name>Explorer並び替えパッチ</name>
+      <explanation>Windows XP での、Explorer の「名前で整列」をWindows 2000/Me 仕様にするパッチソフト。</explanation>
+      <page>junk/dl_menu_junk.html</page>
+      <last_date>2006.10.18</last_date>
+    </soft>
+    <soft>
+      <anchor>#DebugerForBcc</anchor>
+      <name>DebugerForBcc</name>
+      <explanation>Borland C++ でWinMain()を扱う際のデバッグ支援ソフト(AB4へも適用可能)。</explanation>
+      <page>junk/dl_menu_junk.html</page>
+      <last_date>2011.10.15</last_date>
+    </soft>
+    <soft>
+      <anchor>#VirusDiskTop</anchor>
+      <name>愉快型画面破壊ウィルス</name>
+      <explanation>ジョークソフト。ディスクトップ画面をバラバラに破壊できます。</explanation>
+      <page>junk/dl_menu_junk.html</page>
+      <last_date>2009.03.02</last_date>
+    </soft>
+  </soft_type>
+  <soft_type page="sleep/dl_menu_sleep.html">
+    <soft>
+      <anchor>#HBlend</anchor>
+      <name>画像半透明合成＋α</name>
+      <explanation>半透明合成、渦巻き加工、グラデーション加工ができる画像加工ソフト。</explanation>
+      <page>sleep/dl_menu_sleep.html</page>
+      <last_date>2004.11.21</last_date>
+    </soft>
+    <soft>
+      <anchor>#wasufan_softb</anchor>
+      <name>淡幻ライブラリ</name>
+      <explanation>文字列型から数値型への変換や、数値データ読み取りなど管理人用便利クラス集。</explanation>
+      <page>sleep/dl_menu_sleep.html</page>
+      <last_date>2004.6.5</last_date>
+    </soft>
+    <soft>
+      <anchor>#2ChConvert</anchor>
+      <name>２ちゃんテキスト→HTMLこんば～た～</name>
+      <explanation>コピペした２ちゃんねるテキストから、元のHTML表示形式を再現するソフト。</explanation>
+      <page>sleep/dl_menu_sleep.html</page>
+      <last_date>2005.01.27</last_date>
+    </soft>
+    <soft>
+      <anchor>#MemoURL</anchor>
+      <name>MemorizeUrl</name>
+      <explanation>URLに特化したクリップボード履歴ソフト。</explanation>
+      <page>sleep/dl_menu_sleep.html</page>
+      <last_date>2005.11.13</last_date>
+    </soft>
+  </soft_type>
+</download>

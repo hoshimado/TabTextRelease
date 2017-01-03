@@ -1,16 +1,16 @@
 _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
 
-  両手たぶメモ   Version 2.38   [TabText23.zip]
+  両手たぶメモ   Version 2.39   [TabText23.zip]
 
-                                      2016.09.22
+                                      2017.01.03
 _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
 
  作成者
- 　　淡幻星（ダンファン　シン：Xing Yanhuan）
+ 　　淡幻星（だんふぁん　しん：Xing Yanhuan）
      E-mail Address : xingyanhuan@yahoo.co.jp
      URL : http://fluorite.halfmoon.jp/
  著作権
- 　　Copyright(C) 2006-2016 Yanhuan All Rights Reserved
+ 　　Copyright(C) 2006-2017 Yanhuan All Rights Reserved
  動作環境
  　　Windows Me / 2000 / XP / Vista / 7 / 8 / 10 (32bit/64bit)
  　　※同梱プラグインを含めて一部に、Windows ME / 2000 / XP では
@@ -259,4 +259,4 @@ _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
 
 
 
-Copyright(C) 2006-2016 Yanhuan All Rights Reserved
+Copyright(C) 2006-2017 Yanhuan All Rights Reserved
