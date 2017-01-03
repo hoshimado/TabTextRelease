@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="Shift_JIS"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+<title>選択キャレットをWikipediaで検索</title>
+<meta http-equiv="Content-Script-Type" content="text/javascript; charset=Shift_JIS" />
+<script language="JavaScript">
+<!--
+	function CaretAction(){
+		if( "SelectedCaret" in window ){
+			if ( 0 != SelectedCaret.length ) {
+				var strUrl = "http://ja.wikipedia.org/wiki/";
+				strUrl = strUrl + SelectedCaret;
+				location.href = strUrl;
+			} else {
+				document.getElementById('CaretText').innerText = "【ERROR】検索文字列が選択されていません。";
+			}
+		}else{
+			document.getElementById('CaretText').innerText = "【ERROR】検索文字列が選択されていません。";
+		}
+	}
+//-->
+</script>
+</head>
+<body onLoad="CaretAction();" bgcolor="#aaaaaa">
+<span style="display:none;">
+	<ttlg:info xmlns:ttlg="http://fluorite.halfmoon.jp/SoftwareManager/TabTextList/SubNoteGadget">
+	<height>240</height>
+</ttlg:info></span>
+
+<span id="CaretText" style="font-weight: bold;">検索中・・・</span><br />
+
+</body>
+</html>

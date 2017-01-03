@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="Shift_JIS"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+<title>サブノート・アクセサリのマニュアル</title>
+<meta http-equiv="Content-Script-Type" content="text/javascript; charset=Shift_JIS" />
+<script language="JavaScript">
+<!--
+	function CaretAction(){
+		if( "SelectedCaret" in window ){
+			document.getElementById('CaretText').innerText = SelectedCaret;
+		}else{
+			document.getElementById('CaretText').innerText = "var SelectedCaret は定義されていません";
+		}
+	}
+	function OpenDefineXml() {
+		if( "DirPluginPath" in window ){
+			//location.href = DirPluginPath + "/" + "SubNoteAccessoryList.xml";
+			window.open( DirPluginPath + "/" + "SubNoteAccessoryList.xml");
+		}else{
+			window.alert( "ファイル 'SubNoteAccessoryList.xml' を見失いました" );
+		}
+	}
+//-->
+</script>
+</head>
+<body onLoad="CaretAction();" bgcolor="#aaaaaa">
+<span style="display:none;">
+	<ttlg:info xmlns:ttlg="http://fluorite.halfmoon.jp/SoftwareManager/TabTextList/SubNoteGadget">
+	<height>240</height>
+</ttlg:info></span>
+
+<ul>
+	<li>サンプル：SubNtAcsrTimer7.html<br />
+		　　生のソースコードと、サブノートペインに出力された様子を確認してみてください。<br />
+	</li>
+	<br />
+	<li>メニューの構成
+		<ul>
+			<li><a href="#" onclick="OpenDefineXml();">SubNoteAccessoryList.xml</a> ･･･設定ファイル。XML形式。<br />
+				ルートタグ：subnote<br />
+				メニュータグ：item<br />
+				タイトルタグ：title<br />
+				ファイル名タグ：filename<br />
+			</li>
+			<li>itemタグ：アイテム構成単位</li>
+			<li>titleタグ：メニューの表示タイトル</li>
+			<li>filenameタグ：<br />
+			　　サブノートペインに出力するHTMLソースのファイル名。<br />
+			　　Pluginsフォルダに格納しておく。<br />
+	　　　　</li>
+		</ul>
+	</li>
+	<li>javascriptとの連携<br />
+		「&lt;script language="JavaScript"&gt;」の記述がある場合、<br>
+		以下の定義済み変数の記述が追加されます。<br />
+		※ヘッダタグに変数格納の記述が追加されてから、サブノート・ペイン表示用の<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;HTMLファイルに出力されます。<br />
+		<ul>
+			<li>var SelectedCaret<br>
+				選択テキストが格納されます。<br />
+				<br />
+				【例】<br />
+				======<br />
+				[<span id="CaretText" style="font-weight: bold;">キャレット選択されているテキスト</span>]<br />
+				======<br />
+			</li>
+			<li>var FileHtmlPath<br>
+				出力元になった、生のHTMLファイルへのパスが格納されます。<br />
+				<br>
+			</li>
+			<li>var DirPluginPath<br>
+				プラグインフォルダへのパスが格納されます。<br />
+				<br>
+			</li>
+		</ul>
+	</li>
+</ul>
+
+</body>
+</html>

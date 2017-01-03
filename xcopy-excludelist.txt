@@ -1,0 +1,5 @@
+.git
+README.md
+copy_without_git.bat
+xcopy-excludelist.txt
+

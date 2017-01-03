@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="Shift_JIS"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+<title>カレンダー</title>
+<meta http-equiv="Content-Script-Type" content="text/javascript; charset=Shift_JIS" />
+</head>
+<body bgcolor="#aaaaaa">
+<span style="display:none;">
+	<ttlg:info xmlns:ttlg="http://fluorite.halfmoon.jp/SoftwareManager/TabTextList/SubNoteGadget">
+		<height>180</height>
+	</ttlg:info>
+</span>
+
+
+
+<!--
+	以下、下記のURLで配布なされているコードを利用させていただいております。
+	http://homepage3.nifty.com/masas/sdir/freejs/calendar/index.html
+-->
+<!-- =====================================================================================
+                                    Calendar Version 0.01
+                            http://homepage3.nifty.com/masas/sdir/
+                         Copyright(c)2002 Masa. All Rights Reserved.
+====================================================================================== -->
+<script language="javascript">
+<!--
+monstr = new Array();
+yostr = new Array();
+/*----------------*
+ * 設定はここから *
+ *----------------*/
+var clfont     = "sans-serif";  // フォントの種類（全体共通）
+
+var frbgcolor  = "#ccddff";	    // 外枠の背景色
+var frborder   = 5;             // 外枠の幅
+var monfnsize  = "10pt";        // 月のフォントサイズ
+var frfncolor  = "#ffffff";     // 月の文字色
+
+var inbgcolor  = "#ffffff";     // 日付部の背景色
+var yobgcolor  = "#ffffee";     // 曜日部の背景色
+var tdbgcolor  = "#ffeeee";     // 本日の背景色
+var dwidth     = 27;            // 日付・曜日欄の幅
+var dheight    = 10;            // 日付・曜日欄の高さ
+var dayfnsize  = "9pt";         // 日付と曜日のフォントサイズ
+var dayfncolor = "#999999";     // 平日の文字色（曜日・日付共通）
+var kdfncolor  = "#ff9999";     // 日曜・休日の文字色（曜日・日付共通）
+var ndstr      = "・";          // 日付なし欄に出す文字
+var ndfncolor  = "#cccccc";     // 日付なし欄の文字色
+
+// 月の表示文字
+monstr[0]  = "January";    //  1月
+monstr[1]  = "February";   //  2月
+monstr[2]  = "March";      //  3月
+monstr[3]  = "April";      //  4月
+monstr[4]  = "May";        //  5月
+monstr[5]  = "June";       //  6月
+monstr[6]  = "July";       //  7月
+monstr[7]  = "August";     //  8月
+monstr[8]  = "September";  //  9月
+monstr[9]  = "October";    // 10月
+monstr[10] = "November";   // 11月
+monstr[11] = "December";   // 12月
+
+// 曜日の表示文字
+yostr[0] = "Sun";  // 日曜
+yostr[1] = "Mon";  // 月曜
+yostr[2] = "Tue";  // 火曜
+yostr[3] = "Wed";  // 水曜
+yostr[4] = "Thu";  // 木曜
+yostr[5] = "Fri";  // 金曜
+yostr[6] = "Sat";  // 土曜
+
+/*----------------*
+ * 設定はここまで *
+ *----------------*/
+//for test
+var test = 0;	// 1:testmode on
+var testyear = 2003;  // year for test
+var testmonth = 9;    // month for test
+var testday = 1;      // day for test
+//
+maxday = new Array(31,28,31,30,31,30,31,31,30,31,30,31);
+var date = new Date();
+if (test == 1) { date.setYear(testyear); date.setMonth(testmonth-1); date.setDate(testday); }
+var year = date.getFullYear();
+var month = date.getMonth() + 1;
+var today = date.getDate();
+if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) { maxday[1]++; }
+date.setDate(1);
+var yo1 = date.getDay();
+var flag = 0;
+var daycnt = 1;
+var moncnt = 0;
+var yasumi, syuku, furi;
+document.write('<table border="0" bgcolor="' + frbgcolor + '" cellpadding="' + frborder + '" cellspacing="0">');
+document.write('<tr><td align="center">');
+document.write('<span style="font-family:' + clfont + ';font-size:' + monfnsize + '">');
+document.write('<font color="' + frfncolor + '"><b>'
+  + monstr[month-1] + ' ' + year + '<\/font><\/b><\/span><br>');
+// 曜日欄
+document.write('<table border="0" bgcolor="' + inbgcolor + '" cellpadding="0" cellspacing="0">');
+document.write('<tr bgcolor="' + yobgcolor + '">');
+for (yo = 0; yo < 7; yo++) {
+  document.write('<td width="' + dwidth + '" height="' + dheight + '" align="center">');
+  document.write('<span style="font-family:' + clfont + ';font-size:' + dayfnsize + '">');
+  if (yo == 0) { document.write('<font color="' + kdfncolor + '">'); }
+    else { document.write('<font color="' + dayfncolor + '">'); }
+  document.write(yostr[yo]);
+  if (yo == 0) { document.write('<\/font>'); }
+  document.write('<\/span>');
+  document.write('<\/td>');
+}
+document.write('<\/tr>');
+while (flag < 2) {
+  document.write('<tr>');
+  for (yo = 0; yo < 7; yo++) {
+    document.write('<td width="' + dwidth + '" height="' + dheight + '" align="center"');
+    if (flag == 0 && yo1 == yo) { flag = 1; }	// 1日
+    if (flag == 1) {	// 日付あり
+      if (daycnt == today) {
+        document.write('bgcolor="' + tdbgcolor + '"');	// 本日の背景設定
+      }
+      document.write('>');
+      document.write('<span style="font-family:' + clfont + ';font-size:' + dayfnsize + '">');
+      yasumi = 0;
+      syuku = 0;
+      // 月曜に関する処理 (Happy Mondayと振替休日)
+      if (yo == 1) {
+        if (furi == 1) {
+          yasumi = 1;
+          furi = 0;
+        }
+        if (++moncnt == 2) {	// 第2月曜
+          if (month == 1) { syuku = 1; }	// 1月 成人の日
+          if (month == 10) { syuku = 1; }	// 10月 体育の日
+        }
+        if (moncnt == 3) {		// 第3月曜
+          if (year >= 2003 && month == 7) { syuku = 1; } 	// 7月 海の日 (2003～)
+          if (year >= 2003 && month == 9) { syuku = 1; } 	// 9月 敬老の日 (2003～)
+        }
+      }
+      // Happy Monday以外の祝日に関する処理
+      if (month == 1 && daycnt == 1) { syuku = 1; }		//  1月 1日 元日
+      if (month == 2 && daycnt == 11) { syuku = 1; }	//  2月11日 建国記念の日
+      if (month == 3) {
+        if (daycnt == Math.floor(20.8431+0.242194*(year-1980))-Math.floor((year-1980)/4)) {
+          syuku = 1;	// 春分の日
+        }
+      }
+      if (month == 4 && daycnt == 29) { syuku = 1; }	//  4月29日 みどりの日
+      if (month == 5 && daycnt == 3) { syuku = 1; }		//  5月 3日 憲法記念日
+      if (month == 5 && daycnt == 4) { syuku = 1; }		//  5月 4日 国民の休日
+      if (month == 5 && daycnt == 5) { syuku = 1; }		//  5月 5日 こどもの日
+      if (month == 9) {
+        if (daycnt == Math.floor(23.2488+0.242194*(year-1980))-Math.floor((year-1980)/4)) {
+          syuku = 1;	// 秋分の日
+        }
+      }
+      if (month == 11 && daycnt == 3) { syuku = 1; }	// 11月 3日 文化の日
+      if (month == 11 && daycnt == 23) { syuku = 1; }	// 11月23日 勤労感謝の日
+      if (month == 12 && daycnt == 23) { syuku = 1; }	// 12月23日 天皇誕生日
+      if (year < 2003 && month == 7 && daycnt == 20) { syuku = 1; }	// 7月20日 海の日 (～2002)
+      if (year < 2003 && month == 9 && daycnt == 15) { syuku = 1; }	//  9月15日 敬老の日 (～2002)
+      if (syuku == 1) { yasumi = 1; }
+      // 日曜に関する処理
+      if (yo == 0) {
+        yasumi = 1;
+        if (syuku == 1) { furi = 1; }
+      }
+      if (yasumi == 1) { document.write('<font color="' + kdfncolor + '">' + daycnt + '<\/font>'); }
+        else { document.write('<font color="' + dayfncolor + '">' + daycnt + '<\/font>'); }
+      if (++daycnt > maxday[month - 1]) { flag = 2; }	// 最終日
+    } else {	// 日付なし
+      document.write('><font color="' + ndfncolor + '">' + ndstr + '<\/font>');
+    }
+    document.write('<\/span>');
+    document.write('<\/td>');
+  }
+  document.write('<\/tr>');
+}
+document.write('<\/table>');
+document.write('<\/td><\/tr><\/table>');
+// -->
+</script>
+<!-- ============================== End of Calendar ================================== -->
+
+
+
+</body>
+</html>

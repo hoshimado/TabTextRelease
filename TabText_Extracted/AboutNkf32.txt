@@ -1,0 +1,48 @@
+
+1. nkf32.dllについて
+Network Kanji Filter V1.5k を、海人氏が 32bit DLL に移植されたものです。
+UNIXやインターネットで多用されるEUC、7bit-JIS、MIMEや、Windows（MS-DOS）
+などで使用される SHIFT-JISの漢字文字列を相互に変換できます。
+再配布については以下に従ってください。
+
+
+2. 再配布について（nkf32.docからの転載です）
+NKF自身は下記方々の著作物です。
+NKF32.DLLの再配布は、最新のNKFの再配布条件に従って下さい。
+（最新のNKFはVECTORなどから入手できるはずです）
+次に、NKF V1.17のソース(nkf.c)のコピーライト部を示します。
+
+************************************************************************
+** Copyright (C) 1987, Fujitsu LTD. (Itaru ICHIKAWA)
+** 連絡先： （株）富士通研究所　ソフト３研　市川　至 
+** （E-Mail Address: ichikawa@flab.fujitsu.co.jp）
+** Copyright (C) 1996,1998
+** 連絡先： 琉球大学情報工学科 河野 真治  mine/X0208 support
+** （E-Mail Address: kono@ie.u-ryukyu.ac.jp）
+** 連絡先： COW for DOS & Win16 & Win32 & OS/2
+** （E-Mail Address: GHG00637@niftyserve.or.p）
+**    このソースのいかなる複写，改変，修正も許諾します。ただし、
+**    その際には、誰が貢献したを示すこの部分を残すこと。
+**    再配布や雑誌の付録などの問い合わせも必要ありません。
+**    このプログラムについては特に何の保証もしない、悪しからず。
+**    Everyone is permitted to do anything on this program 
+**    including copying, modifying, improving.
+**    as long as you don't try to pretend that you wrote it.
+**    i.e., the above copyright notice has to appear in all copies.
+**    You don't have to ask before copying or publishing.
+**    THE AUTHOR DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE.
+***********************************************************************/
+** パッチ制作者
+**  void@merope.pleiades.or.jp (Kusakabe Youichi)
+**  NIDE Naoyuki <nide@ics.nara-wu.ac.jp>
+**  ohta@src.ricoh.co.jp (Junn Ohta)
+**  inouet@strl.nhk.or.jp (Tomoyuki Inoue)
+**  kiri@pulser.win.or.jp (Tetsuaki Kiriyama)
+**  a_kuroe@hoffman.cc.sophia.ac.jp (Akihiko Kuroe)
+**  kono@csl.sony.co.jp (Shinji Kono)
+**  GHG00637@nifty-serve.or.jp (COW)
+**
+** 最終更新日
+**  1998.11.7
+**/ 
+

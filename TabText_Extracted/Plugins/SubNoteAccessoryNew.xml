@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="shift_jis"?>
+<subnote>
+  <item>
+    <title>Googleで検索(&amp;G)</title>
+    <filename>SubNtAcsrGoogle.html</filename>
+  </item>
+  <item>
+    <title>Wikipediaで検索(&amp;W)</title>
+    <filename>SubNtAcsrWikipedia.html</filename>
+  </item>
+  <item>
+    <title>Weblioで英和検索(&amp;E)</title>
+    <filename>SubNtAcsrEngDic.html</filename>
+  </item>
+  <item>
+    <title>3分タイマー(&amp;T)</title>
+    <filename>SubNtAcsrTimer3.html</filename>
+  </item>
+  <item>
+    <title>カレンダー(&amp;C)</title>
+    <filename>SubNtAcsrCalendar.html</filename>
+  </item>
+  <item>
+    <title>本プラグインのマニュアルを表示</title>
+    <filename>SubNtAcsrManual.html</filename>
+  </item>
+</subnote>
